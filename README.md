@@ -1,1 +1,2 @@
-# tiny-npm
+# KPM
+Package Manager
