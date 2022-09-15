@@ -1,0 +1,56 @@
+{
+  "name": "kpm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManuelMaciel/tiny-npm.git"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.36",
+    "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/js-yaml": "^4.0.5",
+    "@types/log-update": "^3.1.0",
+    "@types/node": "^18.7.18",
+    "@types/node-fetch": "^2.6.2",
+    "@types/prettier": "^2.7.0",
+    "@types/progress": "^2.0.5",
+    "@types/semver": "^7.3.12",
+    "@types/tar": "^6.1.2",
+    "@types/yargs": "^17.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "esbuild-register": "^3.3.3",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "find-up": "^6.3.0",
+    "fs-extra": "^10.1.0",
+    "js-yaml": "^4.1.0",
+    "log-update": "^5.0.1",
+    "node-fetch": "^3.2.10",
+    "progress": "^2.0.3",
+    "semver": "^7.3.7",
+    "tar": "^6.1.11",
+    "yargs": "^17.5.1"
+  },
+  "author": "ManuelMaciel",
+  "bugs": {
+    "url": "https://github.com/ManuelMaciel/tiny-npm/issues"
+  },
+  "homepage": "https://github.com/ManuelMaciel/tiny-npm#readme"
+}
