@@ -1,5 +1,5 @@
 {
-  "name": "knpm",
+  "name": "karmapm",
   "version": "1.0.0",
   "description": "karma package manager",
   "main": "bin/index.js",

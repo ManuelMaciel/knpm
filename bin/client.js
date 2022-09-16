@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const yargs_1 = __importDefault(require("yargs"));
 const index_1 = require("./index");
 yargs_1.default
-    .usage('knpm <command> [args]')
+    .usage('karmapm <command> [args]')
     .version()
     .alias('v', 'version')
     .help()

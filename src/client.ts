@@ -2,7 +2,7 @@ import yargs from 'yargs';
 import { main } from './index';
 
 yargs
-  .usage('knpm <command> [args]')
+  .usage('karmapm <command> [args]')
   .version()
   .alias('v', 'version')
   .help()
