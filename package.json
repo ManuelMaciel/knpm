@@ -2,11 +2,11 @@
   "name": "knpm",
   "version": "1.0.0",
   "description": "karma package manager",
-  "main": "src/index.js",
+  "main": "bin/index.js",
   "scripts": {
     "start": "node -r esbuild-register src/client.ts",
     "dev": "yarn start",
-    "build": "tsc --build",
+    "build": "tsc",
     "lint": "eslint src",
     "fix": "eslint --fix src",
     "clean": "rm -rf ./build"

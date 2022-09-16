@@ -1,4 +1,4 @@
-import { Promise } from 'bluebird';
+import { Promise as PB } from 'bluebird';
 import { findUp } from 'find-up';
 import { readJson, writeJsonSync } from 'fs-extra';
 import { Arguments } from 'yargs';
@@ -43,12 +43,12 @@ export const main = async (args: Arguments) => {
   prepareInstall(Object.keys(info.topLevel).length + info.unsatisfied.length);
 
   // Install top-level packages
-  await Promise.each(Object.entries(info.topLevel), async ([name, { url }]) => {
+  await PB.each(Object.entries(info.topLevel), async ([name, { url }]) => {
     await install(name, url);
   });
 
   // Install packages with conflicts
-  await Promise.each(info.unsatisfied, async (item) => {
+  await PB.each(info.unsatisfied, async (item) => {
     await install(item.name, item.url, `/${TARGET}/${item.parent}`);
   });
 

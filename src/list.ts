@@ -1,4 +1,4 @@
-import { Promise } from 'bluebird';
+import { Promise as PB } from 'bluebird';
 import { maxSatisfying, satisfies } from 'semver';
 import { TARGET } from './constant';
 import { getItem, updateOrCreate } from './lock';
@@ -115,7 +115,7 @@ const collectDeps = async (name: string, constraint: string, stack: DependencySt
       version: matched,
       dependencies,
     });
-    await Promise.all(
+    await PB.all(
       Object.entries(dependencies)
         .filter(([dep, range]) => !hasCirculation(dep, range, stack))
         .map(([dep, range]) => collectDeps(dep, range, stack.slice())),
@@ -162,7 +162,7 @@ const hasCirculation = (name: string, range: string, stack: DependencyStack) => 
  */
 export const list = async (rootManifest: PackageJson) => {
   if (rootManifest.dependencies) {
-    const res = await Promise.map(
+    const res = await PB.map(
       Object.entries(rootManifest.dependencies), // [[pkg, version], [pkg, version], ...]
       async ([name, version]) => await collectDeps(name, version),
     ).filter(Boolean); // filter(Boolean) to remove false things (like null) from the array
@@ -172,7 +172,7 @@ export const list = async (rootManifest: PackageJson) => {
   }
 
   if (rootManifest.devDependencies) {
-    const res = await Promise.map(
+    const res = await PB.map(
       Object.entries(rootManifest.devDependencies),
       async ([name, version]) => await collectDeps(name, version),
     ).filter(Boolean); // filter(Boolean) to remove falsy things (like null) from the array

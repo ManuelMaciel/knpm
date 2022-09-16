@@ -1,5 +1,3 @@
-/build
-
 /node_modules
 /knpm_node_modules
 *.lock

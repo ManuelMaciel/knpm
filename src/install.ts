@@ -11,5 +11,5 @@ export const install = async (name: string, url: string, location = '') => {
   const res = await fetch(url);
 
   // res.body is a readable stream and `tar.extract` accepts readable streams, so there is no need to create a file on disk, only extract directly
-  res.body.pipe(extract({ cwd: path, strip: 1 })).on('close', tickInstalling); // on(...) Update progress bar with
+  res.body ? res.body.pipe(extract({ cwd: path, strip: 1 })).on('close', tickInstalling) : null // on(...) Update progress bar with
 };
